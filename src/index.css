@@ -21,11 +21,22 @@
   
   /* Smooth Scrolling */
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
   
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
@@ -50,8 +61,53 @@ button {
   cursor: pointer;
 }
 
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+/* Utility class for screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Performance optimization: will-change for animated elements */
+.hero-content,
+.circle-card,
+.news-card,
+.founder-card {
+  will-change: transform;
+}
+
+/* Remove will-change after animation */
+.hero-content {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    will-change: auto;
+  }
 }

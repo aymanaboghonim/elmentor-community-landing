@@ -1,5 +1,5 @@
 .founders {
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   background-color: #fff;
 }
 
@@ -11,8 +11,24 @@
 .founders-container h2 {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: #333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.founders-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
 }
 
 .founders-grid {
@@ -20,31 +36,45 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 3rem;
   justify-items: center;
+  margin-top: 3.5rem;
 }
 
 .founder-card {
   text-align: center;
   max-width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.founder-card:hover {
+  transform: translateY(-5px);
 }
 
 .founder-avatar {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
   margin: 0 auto 1.5rem;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.founder-card:hover .founder-avatar {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
 }
 
 .founder-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
   color: #333;
+  font-weight: 600;
 }
 
 .founder-role {
@@ -52,6 +82,7 @@
   color: #667eea;
   font-weight: 600;
   margin-bottom: 1rem;
+  letter-spacing: 0.5px;
 }
 
 .founder-bio {
@@ -61,7 +92,31 @@
 }
 
 @media (max-width: 768px) {
+  .founders {
+    padding: 4rem 1.5rem;
+  }
+
   .founders-container h2 {
     font-size: 2rem;
+  }
+
+  .founders-grid {
+    gap: 2.5rem;
+  }
+
+  .founder-avatar {
+    width: 120px;
+    height: 120px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .founders-container h2 {
+    font-size: 1.75rem;
+  }
+
+  .founders-grid {
+    grid-template-columns: 1fr;
   }
 }

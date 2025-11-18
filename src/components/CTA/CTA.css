@@ -1,43 +1,95 @@
 .cta {
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.cta-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .cta-content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .cta-content p {
   font-size: 1.3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.95;
+  font-weight: 300;
 }
 
 .cta-button {
-  padding: 1rem 2.5rem;
+  padding: 1rem 3rem;
   font-size: 1.1rem;
   background-color: white;
   color: #667eea;
   border: none;
-  border-radius: 4px;
+  border-radius: 50px;
   cursor: pointer;
   font-weight: 600;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cta-button:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 768px) {
+  .cta {
+    padding: 4rem 1.5rem;
+  }
+
   .cta-content h2 {
     font-size: 2rem;
   }
 
   .cta-content p {
     font-size: 1.1rem;
+  }
+
+  .cta-button {
+    padding: 0.875rem 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
   }
 }
