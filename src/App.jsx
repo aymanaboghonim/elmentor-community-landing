@@ -6,6 +6,7 @@ import News from './components/News/News';
 import Founders from './components/Founders/Founders';
 import CTA from './components/CTA/CTA';
 import Footer from './components/Footer/Footer';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Founders />
       <CTA />
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

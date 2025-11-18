@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #fff;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -18,7 +18,7 @@
 .navbar-logo h2 {
   margin: 0;
   font-size: 1.5rem;
-  color: #333;
+  color: #fff;
 }
 
 .navbar-toggle {
@@ -34,7 +34,7 @@
 .navbar-toggle span {
   width: 25px;
   height: 3px;
-  background-color: #333;
+  background-color: #fff;
   transition: all 0.3s ease;
   border-radius: 2px;
 }
@@ -48,7 +48,7 @@
 }
 
 .navbar-menu li a {
-  color: #555;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -56,7 +56,8 @@
 }
 
 .navbar-menu li a:hover {
-  color: #667eea;
+  color: #f0f0f0;
+  opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -69,7 +70,7 @@
     top: 72px;
     left: -100%;
     flex-direction: column;
-    background-color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     width: 100%;
     text-align: center;
     transition: left 0.3s ease;
