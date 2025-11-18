@@ -1,5 +1,5 @@
 .circles {
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   background-color: #fff;
 }
 
@@ -11,33 +11,71 @@
 .circles-container h2 {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   color: #333;
+  font-weight: 700;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.circles-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
 }
 
 .circles-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin-top: 3.5rem;
 }
 
 .circle-card {
-  padding: 2rem;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+  border-radius: 12px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.circle-card:hover::before {
+  transform: scaleX(1);
 }
 
 .circle-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+  border-color: #667eea;
 }
 
 .circle-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #667eea;
+  font-weight: 600;
 }
 
 .circle-card p {
@@ -47,7 +85,25 @@
 }
 
 @media (max-width: 768px) {
+  .circles {
+    padding: 4rem 1.5rem;
+  }
+
   .circles-container h2 {
     font-size: 2rem;
+  }
+
+  .circles-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .circles-container h2 {
+    font-size: 1.75rem;
+  }
+
+  .circles-grid {
+    grid-template-columns: 1fr;
   }
 }

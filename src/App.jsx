@@ -5,6 +5,7 @@ import Circles from './components/Circles/Circles';
 import News from './components/News/News';
 import Founders from './components/Founders/Founders';
 import CTA from './components/CTA/CTA';
+import Footer from './components/Footer/Footer';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <News />
       <Founders />
       <CTA />
+      <Footer />
     </>
   );
 }
