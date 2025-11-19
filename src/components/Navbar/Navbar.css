@@ -21,6 +21,12 @@
   color: #fff;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .navbar-toggle {
   display: none;
   flex-direction: column;
@@ -61,6 +67,19 @@
 }
 
 @media (max-width: 768px) {
+  .navbar-container {
+    justify-content: space-between;
+  }
+
+  .navbar-actions {
+    order: 2;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    order: 3;
+  }
+
   .navbar-toggle {
     display: flex;
   }

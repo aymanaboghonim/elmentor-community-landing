@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import DarkModeToggle from '../DarkModeToggle/DarkModeToggle';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -22,16 +23,19 @@ const Navbar = () => {
         <div className="navbar-logo">
           <h2>Elmentor Community</h2>
         </div>
-        <button 
-          className="navbar-toggle" 
-          onClick={toggleMenu}
-          aria-label="Toggle navigation menu"
-          aria-expanded={isMenuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div className="navbar-actions">
+          <DarkModeToggle />
+          <button 
+            className="navbar-toggle" 
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
         <ul className={`navbar-menu ${isMenuOpen ? 'active' : ''}`}>
           <li><a onClick={() => scrollToSection('hero')}>Home</a></li>
           <li><a onClick={() => scrollToSection('about')}>About</a></li>

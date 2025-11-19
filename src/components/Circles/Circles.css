@@ -1,6 +1,6 @@
 .circles {
   padding: 6rem 2rem;
-  background-color: #fff;
+  background-color: var(--white);
 }
 
 .circles-container {
@@ -12,7 +12,7 @@
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--text-dark);
   font-weight: 700;
   position: relative;
   display: inline-block;
@@ -40,11 +40,11 @@
 
 .circle-card {
   padding: 2.5rem 2rem;
-  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+  background: var(--card-background);
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease;
-  border: 1px solid #f0f0f0;
+  border: 1px solid rgba(102, 126, 234, 0.1);
   position: relative;
   overflow: hidden;
 }
@@ -80,7 +80,7 @@
 
 .circle-card p {
   font-size: 1rem;
-  color: #555;
+  color: var(--text-light);
   line-height: 1.6;
 }
 
