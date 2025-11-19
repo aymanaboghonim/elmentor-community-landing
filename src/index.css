@@ -6,13 +6,18 @@
 }
 
 :root {
-  /* Color Palette */
+  /* Color Palette - Light Mode */
   --primary-color: #667eea;
   --secondary-color: #764ba2;
   --text-dark: #333;
   --text-light: #555;
   --background-light: #f9f9f9;
   --white: #fff;
+  --card-background: #fff;
+  --footer-background: #2c3e50;
+  --footer-text: #ecf0f1;
+  --footer-text-secondary: #bdc3c7;
+  --footer-border: #34495e;
   
   /* Typography */
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -27,6 +32,19 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark Mode */
+[data-theme="dark"] {
+  --text-dark: #e0e0e0;
+  --text-light: #b0b0b0;
+  --background-light: #1a1a1a;
+  --white: #2d2d2d;
+  --card-background: #2d2d2d;
+  --footer-background: #1a1a1a;
+  --footer-text: #e0e0e0;
+  --footer-text-secondary: #b0b0b0;
+  --footer-border: #3a3a3a;
 }
 
 /* Reduce motion for users who prefer it */
